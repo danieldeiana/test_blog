@@ -1,0 +1,10 @@
+{% if all_posts %}
+    {% for post in all_posts %}
+        <a href="{% url 'blog:detail' post.id %}">
+            <h2>{{ post.pub_date }}</h2>
+            <p>{{ post.text }}</p>
+        </a>
+    {% endfor %}
+{% else %}
+    <p>There are no posts to display!</p>
+{% endif %}
